@@ -13,9 +13,9 @@ export class AppComponent implements OnInit {
   title = 'app';
 
   constructor (
-    private userThang: UserApiService,
-    private taskThang: TaskApiService,
-    private routerThang: Router
+    public userThang: UserApiService,
+    public taskThang: TaskApiService,
+    public routerThang: Router
   ) { }
 
   ngOnInit() {
