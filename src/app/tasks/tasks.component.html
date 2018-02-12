@@ -1,0 +1,178 @@
+<!-- TABS -->
+
+<!-- INFO ON HOW TO ADD TASKS -->
+<div style="height:10vh"></div>
+<div class="card-panel z-depth-3">
+  <span class="black-text">HOW TO ADD A TASK: <br>
+    1. Select <table>
+    2. Add task or Add Bad Habit
+    </table>
+  </span>
+</div>
+
+
+
+  <!--TABS SEPARATION INTO DAY WEEK MONTH -->
+
+  <div class="col s12">
+    <ul class="tabs">
+      <li class="tab col s4"><a class="active" href="#test1">Daily</a></li>
+      <li class="tab col s4"><a href="#test2">Weekly </a></li>
+      <li class="tab col s4"><a href="#test3">Montly</a></li>
+
+    </ul>
+  </div>
+
+  <!--DIV CREATED TO MOVE CARDS DOWN -->
+  <div style="height:10vh"></div>
+
+    <!-- END OF BLANK DIV-->
+
+
+
+     <!--CARD DAILY -->
+  <div id="test1" class="col s8">
+
+    <form (ngSubmit)="TaskAjax()">
+      <div class="input-field inline">
+        <input type="text" id="namegood" [(ngModel)]="newTask.name" [ngModelOptions]="{standalone: true}">
+        <label class="active" for="namegood">add Task</label>
+      </div>
+        <button class="add-button">
+        <a class="btn-floating waves-effect waves-light green">
+        <i class="material-icons">add</i></a>
+        </button>
+    </form>
+
+    <form (ngSubmit)="TaskAjax()">
+      <div class="input-field inline">
+        <input type="text" id="namebad" [(ngModel)]="newTask.name2" [ngModelOptions]="{standalone: true}">
+        <label class="active" for="namebad">add Bad Habit</label>
+      </div>
+        <button class="add-button">
+        <a class="btn-floating waves-effect waves-light red">
+        <i class="material-icons">add</i></a>
+        </button>
+    </form>
+
+
+
+    <h4 class= "grey-text"> Task Queue:</h4>
+      <ul>
+        <li *ngFor="let oneTask of tasks">
+          <h6>{{oneTask.name}} </h6>
+          <button class="waves-effect waves-light btn red" (click)="startDeleteAjax(oneTask._id)">Delete</button>
+          <p>
+      <input type="checkbox" [id]="oneTask._id"/>
+      <label [for]="oneTask._id">Completed?</label>
+    </p>
+
+        </li>
+      </ul>
+
+  </div>
+
+    <!--CARD WEEKLY -->
+  <div id="test2" class="col s8">
+
+        <form (ngSubmit)="TaskAjax()">
+          <div class="input-field inline">
+            <input type="text" id="name" [(ngModel)]="newTask.name" [ngModelOptions]="{standalone: true}">
+            <label class="active" for="name">add Task</label>
+          </div>
+            <button class="add-button">
+            <a class="btn-floating waves-effect waves-light green">
+            <i class="material-icons">add</i></a>
+            </button>
+        </form>
+
+        <form (ngSubmit)="TaskAjax()">
+          <div class="input-field inline">
+            <input type="text" id="name" [(ngModel)]="newTask.name" [ngModelOptions]="{standalone: true}">
+            <label class="active" for="name">add Bad Habit</label>
+          </div>
+            <button class="add-button">
+            <a class="btn-floating waves-effect waves-light red">
+            <i class="material-icons">add</i></a>
+            </button>
+        </form>
+
+
+
+        <h4 class= "grey-text"> Task Queue:</h4>
+          <ul>
+            <li *ngFor="let oneTask of tasks">
+              <h6>{{oneTask.name}} </h6>
+              <button class="waves-effect waves-light btn red" (click)="startDeleteAjax(oneTask._id)">Delete</button>
+              <p>
+          <input type="checkbox" [id]="oneTask._id"/>
+          <label [for]="oneTask._id">Completed?</label>
+        </p>
+
+            </li>
+          </ul>
+
+
+  </div>
+
+
+    <!--CARD MONTLY -->
+  <div id="test3" class="col s8">
+
+
+        <form (ngSubmit)="TaskAjax()">
+          <div class="input-field inline">
+            <input type="text" id="name" [(ngModel)]="newTask.name" [ngModelOptions]="{standalone: true}">
+            <label class="active" for="name">add Task</label>
+          </div>
+            <button class="add-button">
+            <a class="btn-floating waves-effect waves-light green">
+            <i class="material-icons">add</i></a>
+            </button>
+        </form>
+
+        <form (ngSubmit)="TaskAjax()">
+          <div class="input-field inline">
+            <input type="text" id="name" [(ngModel)]="newTask.name" [ngModelOptions]="{standalone: true}">
+            <label class="active" for="name">add Bad Habit</label>
+          </div>
+            <button class="add-button">
+            <a class="btn-floating waves-effect waves-light red">
+            <i class="material-icons">add</i></a>
+            </button>
+        </form>
+
+
+
+        <h4 class= "grey-text"> Task Queue:</h4>
+          <ul>
+            <li *ngFor="let oneTask of tasks">
+              <h6>{{oneTask.name}} </h6>
+              <button class="waves-effect waves-light btn red" (click)="startDeleteAjax(oneTask._id)">Delete</button>
+              <p>
+          <input type="checkbox" [id]="oneTask._id"/>
+          <label [for]="oneTask._id">Completed?</label>
+        </p>
+
+            </li>
+          </ul>
+
+  </div>
+
+
+
+
+
+<!-- TAP TARGET -->
+<div class="fixed-action-btn" style="bottom:45px;right:24px">
+  <a id="menu" onclick="$('.tap-target').tapTarget('open')" class="waves-effect waves-light btn btn-floating btn-large black">
+    <i class="material-icons">menu</i>
+  </a>
+</div>
+<!-- TAP TARGET Content -->
+<div class="tap-target black" data-activates="menu">
+  <div class="tap-target-content white-text">
+    <h5>GET SOME SHIT DONE</h5>
+    <p class="white-text">Studies Show that if you make a habit of writtings things down, you will be able to get more shit done!</p>
+  </div>
+</div>
